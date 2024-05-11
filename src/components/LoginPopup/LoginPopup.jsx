@@ -1,11 +1,13 @@
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import './LoginPopup.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../Context/StoreContext'
+import PropTypes from 'prop-types';
+
 import axios from "axios"
 const LoginPopup = ({setShowLogin}) => {
 
-  const {url, setToken, token}=useContext(StoreContext)
+  const {url, setToken}=useContext(StoreContext)
     
   const[currentState, setCurrentState]=useState('Login')
   const[data,setData]=useState({
@@ -67,5 +69,10 @@ else{
     </div>
   )
 }
+
+LoginPopup.propTypes = {
+  setShowLogin: PropTypes.string.isRequired,
+  
+};
 
 export default LoginPopup

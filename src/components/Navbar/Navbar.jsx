@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import "./Navbar.css"
 import {Link, useNavigate} from 'react-router-dom'
+import PropTypes from "prop-types"
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../Context/StoreContext'
 const Navbar = ({setShowLogin}) => {
@@ -39,5 +40,9 @@ navigate("/")
     </div>
   )
 }
+Navbar.propTypes = {
+  setShowLogin: PropTypes.string.isRequired,
+  
+};
 
 export default Navbar
